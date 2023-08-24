@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from .extensions import db  # Assuming you have the SQLAlchemy db object defined somewhere
-from .models import User, Data, Plug, Attendance
+from .models import User, Attendance
 from sqlalchemy import func
 import datetime
 
