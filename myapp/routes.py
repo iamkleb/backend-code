@@ -53,7 +53,7 @@ def mark_attendance():
 def get_students_attendance_for_lecturer():
     attendance_data = db.session.query(Attendance.time, User.name, User.index_number, Attendance.course_name).\
         join(User, User.index_number == Attendance.index_number).\
-        filter(User.role == 'student').all()
+        filter(User.role == 'Student').all()
     
     result = []
     for time, name, index_number, course_name in attendance_data:
@@ -71,7 +71,7 @@ def get_student_attendance():
     data = request.get_json()
     student_index_number = data.get('index_number')
     
-    student = User.query.filter_by(index_number=student_index_number, role='student').first()
+    student = User.query.filter_by(index_number=student_index_number, role='Student').first()
     if student is None:
         return jsonify({'error': 'Student not found'}), 404
     
