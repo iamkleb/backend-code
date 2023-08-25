@@ -14,7 +14,7 @@ class Attendance(db.Model):
     index_number = db.Column(db.Integer)   # Index number of the user
     attended = db.Column(db.Boolean)       # Whether the user attended (True/False)
     time = db.Column(db.DateTime)          # Timestamp of the data
-
+    course_name = db.Column(db.String)
 
 """"
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime
