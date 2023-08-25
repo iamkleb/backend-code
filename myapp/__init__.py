@@ -11,6 +11,8 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
     
     db.init_app(app)
+    # Enable CORS for the entire app
+    CORS(app)
 
     app.register_blueprint(main)
 
