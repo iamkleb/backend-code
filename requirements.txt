@@ -29,3 +29,4 @@ typing_extensions==4.7.1
 urllib3==2.0.4
 Werkzeug
 yarl==1.9.2
+flask_cors
