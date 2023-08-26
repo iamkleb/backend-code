@@ -14,7 +14,7 @@ def authenticate():
     
     user = User.query.filter_by(email=email).first()
     if user and user.password == password:
-        return jsonify({'role': user.role})
+        return jsonify({'role': user.role, 'index_number': user.index_number})
     else:
         return jsonify({'error': 'Authentication failed'}), 401
 
