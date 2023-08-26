@@ -73,7 +73,9 @@ def get_student_attendance():
     
     student = User.query.filter_by(index_number=student_index_number, role='Student').first()
     if student is None:
-        return jsonify({'error': 'Student not found'}), 404
+        student = User.query.filter_by(index_number=student_index_number, role='student').first()
+        if student is None:
+            return jsonify({'error': 'Student not found'}), 404
     
     attendance_data = Attendance.query.filter_by(index_number=student.index_number).all()
     
